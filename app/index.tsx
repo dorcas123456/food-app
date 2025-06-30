@@ -1,5 +1,6 @@
 import React from "react";
 import {
+    SafeAreaView,
     View,
     Text,
     TouchableOpacity,
@@ -16,21 +17,22 @@ export default function Welcomescreen () {
     }
     return (
            <>
-           <View style={styles.body}>
+           <SafeAreaView style={styles.body}>
             <Text style={styles.first}>WELCOME TO</Text>
             <Text  style={styles.second} >INSTANT FOODS</Text>
             <TouchableOpacity onPress={() => router.push('/auth/signup')} style={styles.button}>
             <Text  style={styles.third}>GET STARTED</Text>
             </TouchableOpacity>
-           </View>
+           </SafeAreaView>
            </>
     );
 }
 
 const styles = StyleSheet.create({
-    body : {
-         height: Platform.select({ android: 800, ios: 220, default:240 }),
-        paddingTop: Platform.OS === 'android' ? 60 : 80,
+    body: {
+        height: '100%',
+        justifyContent: 'center',
+        flex: 1,
         paddingHorizontal: 24,
         paddingBottom: 40,
         alignItems: 'center',
